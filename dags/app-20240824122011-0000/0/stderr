@@ -1,0 +1,182 @@
+Spark Executor Command: "/opt/bitnami/java/bin/java" "-cp" "/opt/bitnami/spark/conf/:/opt/bitnami/spark/jars/*" "-Xmx1024M" "-Dspark.driver.port=35023" "-Djava.net.preferIPv6Addresses=false" "-XX:+IgnoreUnrecognizedVMOptions" "--add-opens=java.base/java.lang=ALL-UNNAMED" "--add-opens=java.base/java.lang.invoke=ALL-UNNAMED" "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED" "--add-opens=java.base/java.io=ALL-UNNAMED" "--add-opens=java.base/java.net=ALL-UNNAMED" "--add-opens=java.base/java.nio=ALL-UNNAMED" "--add-opens=java.base/java.util=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED" "--add-opens=java.base/jdk.internal.ref=ALL-UNNAMED" "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED" "--add-opens=java.base/sun.nio.cs=ALL-UNNAMED" "--add-opens=java.base/sun.security.action=ALL-UNNAMED" "--add-opens=java.base/sun.util.calendar=ALL-UNNAMED" "--add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED" "-Djdk.reflect.useDirectMethodHandle=false" "org.apache.spark.executor.CoarseGrainedExecutorBackend" "--driver-url" "spark://CoarseGrainedScheduler@62929844d775:35023" "--executor-id" "0" "--hostname" "172.19.0.4" "--cores" "1" "--app-id" "app-20240824122011-0000" "--worker-url" "spark://Worker@172.19.0.4:42027" "--resourceProfileId" "0"
+========================================
+
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+24/08/24 12:20:13 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 157@34322285a060
+24/08/24 12:20:13 INFO SignalUtils: Registering signal handler for TERM
+24/08/24 12:20:13 INFO SignalUtils: Registering signal handler for HUP
+24/08/24 12:20:13 INFO SignalUtils: Registering signal handler for INT
+24/08/24 12:20:13 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+24/08/24 12:20:13 INFO SecurityManager: Changing view acls to: spark,default
+24/08/24 12:20:13 INFO SecurityManager: Changing modify acls to: spark,default
+24/08/24 12:20:13 INFO SecurityManager: Changing view acls groups to: 
+24/08/24 12:20:13 INFO SecurityManager: Changing modify acls groups to: 
+24/08/24 12:20:13 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: spark, default; groups with view permissions: EMPTY; users with modify permissions: spark, default; groups with modify permissions: EMPTY
+24/08/24 12:20:14 INFO TransportClientFactory: Successfully created connection to 62929844d775/172.19.0.10:35023 after 85 ms (0 ms spent in bootstraps)
+24/08/24 12:20:14 INFO SecurityManager: Changing view acls to: spark,default
+24/08/24 12:20:14 INFO SecurityManager: Changing modify acls to: spark,default
+24/08/24 12:20:14 INFO SecurityManager: Changing view acls groups to: 
+24/08/24 12:20:14 INFO SecurityManager: Changing modify acls groups to: 
+24/08/24 12:20:14 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: spark, default; groups with view permissions: EMPTY; users with modify permissions: spark, default; groups with modify permissions: EMPTY
+24/08/24 12:20:14 INFO TransportClientFactory: Successfully created connection to 62929844d775/172.19.0.10:35023 after 2 ms (0 ms spent in bootstraps)
+24/08/24 12:20:14 INFO DiskBlockManager: Created local directory at /tmp/spark-3206e4c0-cba6-475b-8327-5df2a51c66db/executor-365ee62f-6e9b-4fb7-8f70-5ecb35563524/blockmgr-7d78e653-4f67-4b6e-a12a-1b0ea8edd782
+24/08/24 12:20:14 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+24/08/24 12:20:14 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@62929844d775:35023
+24/08/24 12:20:14 INFO WorkerWatcher: Connecting to worker spark://Worker@172.19.0.4:42027
+24/08/24 12:20:14 INFO TransportClientFactory: Successfully created connection to /172.19.0.4:42027 after 1 ms (0 ms spent in bootstraps)
+24/08/24 12:20:14 INFO ResourceUtils: ==============================================================
+24/08/24 12:20:14 INFO ResourceUtils: No custom resources configured for spark.executor.
+24/08/24 12:20:14 INFO ResourceUtils: ==============================================================
+24/08/24 12:20:14 INFO WorkerWatcher: Successfully connected to spark://Worker@172.19.0.4:42027
+24/08/24 12:20:14 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+24/08/24 12:20:14 INFO Executor: Starting executor ID 0 on host 172.19.0.4
+24/08/24 12:20:14 INFO Executor: OS info Linux, 5.15.153.1-microsoft-standard-WSL2, amd64
+24/08/24 12:20:14 INFO Executor: Java version 17.0.12
+24/08/24 12:20:14 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 33101.
+24/08/24 12:20:14 INFO NettyBlockTransferService: Server created on 172.19.0.4:33101
+24/08/24 12:20:14 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+24/08/24 12:20:14 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(0, 172.19.0.4, 33101, None)
+24/08/24 12:20:14 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(0, 172.19.0.4, 33101, None)
+24/08/24 12:20:14 INFO BlockManager: Initialized BlockManager: BlockManagerId(0, 172.19.0.4, 33101, None)
+24/08/24 12:20:14 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+24/08/24 12:20:14 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@5215fda6 for default.
+24/08/24 12:20:16 INFO CoarseGrainedExecutorBackend: Got assigned task 0
+24/08/24 12:20:16 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+24/08/24 12:20:16 INFO TorrentBroadcast: Started reading broadcast variable 1 with 1 pieces (estimated total size 4.0 MiB)
+24/08/24 12:20:17 INFO TransportClientFactory: Successfully created connection to 62929844d775/172.19.0.10:46237 after 1 ms (0 ms spent in bootstraps)
+24/08/24 12:20:17 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 6.4 KiB, free 434.4 MiB)
+24/08/24 12:20:17 INFO TorrentBroadcast: Reading broadcast variable 1 took 87 ms
+24/08/24 12:20:17 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 13.5 KiB, free 434.4 MiB)
+24/08/24 12:20:17 INFO CodeGenerator: Code generated in 219.024408 ms
+24/08/24 12:20:17 INFO FileScanRDD: Reading File path: file:///opt/airflow/dataframe.csv, range: 0-514657, partition values: [empty row]
+24/08/24 12:20:17 INFO CodeGenerator: Code generated in 11.313036 ms
+24/08/24 12:20:17 INFO TorrentBroadcast: Started reading broadcast variable 0 with 1 pieces (estimated total size 4.0 MiB)
+24/08/24 12:20:17 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 34.2 KiB, free 434.3 MiB)
+24/08/24 12:20:17 INFO TorrentBroadcast: Reading broadcast variable 0 took 10 ms
+24/08/24 12:20:17 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 370.9 KiB, free 434.0 MiB)
+24/08/24 12:20:18 ERROR Executor: Exception in task 0.0 in stage 0.0 (TID 0)
+org.apache.spark.SparkFileNotFoundException: File file:/opt/airflow/dataframe.csv does not exist
+It is possible the underlying files have been updated. You can explicitly invalidate the cache in Spark by running 'REFRESH TABLE tableName' command in SQL or by recreating the Dataset/DataFrame involved.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.readCurrentFileNotFoundError(QueryExecutionErrors.scala:781)
+	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.org$apache$spark$sql$execution$datasources$FileScanRDD$$anon$$readCurrentFile(FileScanRDD.scala:220)
+	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.nextIterator(FileScanRDD.scala:279)
+	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.hasNext(FileScanRDD.scala:129)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenEvaluatorFactory$WholeStageCodegenPartitionEvaluator$$anon$1.hasNext(WholeStageCodegenEvaluatorFactory.scala:43)
+	at org.apache.spark.sql.execution.SparkPlan.$anonfun$getByteArrayRdd$1(SparkPlan.scala:388)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:893)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2$adapted(RDD.scala:893)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+24/08/24 12:20:18 INFO CoarseGrainedExecutorBackend: Got assigned task 1
+24/08/24 12:20:18 INFO Executor: Running task 0.1 in stage 0.0 (TID 1)
+24/08/24 12:20:18 INFO FileScanRDD: Reading File path: file:///opt/airflow/dataframe.csv, range: 0-514657, partition values: [empty row]
+24/08/24 12:20:18 ERROR Executor: Exception in task 0.1 in stage 0.0 (TID 1)
+org.apache.spark.SparkFileNotFoundException: File file:/opt/airflow/dataframe.csv does not exist
+It is possible the underlying files have been updated. You can explicitly invalidate the cache in Spark by running 'REFRESH TABLE tableName' command in SQL or by recreating the Dataset/DataFrame involved.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.readCurrentFileNotFoundError(QueryExecutionErrors.scala:781)
+	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.org$apache$spark$sql$execution$datasources$FileScanRDD$$anon$$readCurrentFile(FileScanRDD.scala:220)
+	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.nextIterator(FileScanRDD.scala:279)
+	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.hasNext(FileScanRDD.scala:129)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenEvaluatorFactory$WholeStageCodegenPartitionEvaluator$$anon$1.hasNext(WholeStageCodegenEvaluatorFactory.scala:43)
+	at org.apache.spark.sql.execution.SparkPlan.$anonfun$getByteArrayRdd$1(SparkPlan.scala:388)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:893)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2$adapted(RDD.scala:893)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+24/08/24 12:20:18 INFO CoarseGrainedExecutorBackend: Got assigned task 2
+24/08/24 12:20:18 INFO Executor: Running task 0.2 in stage 0.0 (TID 2)
+24/08/24 12:20:18 INFO FileScanRDD: Reading File path: file:///opt/airflow/dataframe.csv, range: 0-514657, partition values: [empty row]
+24/08/24 12:20:18 ERROR Executor: Exception in task 0.2 in stage 0.0 (TID 2)
+org.apache.spark.SparkFileNotFoundException: File file:/opt/airflow/dataframe.csv does not exist
+It is possible the underlying files have been updated. You can explicitly invalidate the cache in Spark by running 'REFRESH TABLE tableName' command in SQL or by recreating the Dataset/DataFrame involved.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.readCurrentFileNotFoundError(QueryExecutionErrors.scala:781)
+	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.org$apache$spark$sql$execution$datasources$FileScanRDD$$anon$$readCurrentFile(FileScanRDD.scala:220)
+	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.nextIterator(FileScanRDD.scala:279)
+	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.hasNext(FileScanRDD.scala:129)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenEvaluatorFactory$WholeStageCodegenPartitionEvaluator$$anon$1.hasNext(WholeStageCodegenEvaluatorFactory.scala:43)
+	at org.apache.spark.sql.execution.SparkPlan.$anonfun$getByteArrayRdd$1(SparkPlan.scala:388)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:893)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2$adapted(RDD.scala:893)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+24/08/24 12:20:18 INFO CoarseGrainedExecutorBackend: Got assigned task 3
+24/08/24 12:20:18 INFO Executor: Running task 0.3 in stage 0.0 (TID 3)
+24/08/24 12:20:18 INFO FileScanRDD: Reading File path: file:///opt/airflow/dataframe.csv, range: 0-514657, partition values: [empty row]
+24/08/24 12:20:18 ERROR Executor: Exception in task 0.3 in stage 0.0 (TID 3)
+org.apache.spark.SparkFileNotFoundException: File file:/opt/airflow/dataframe.csv does not exist
+It is possible the underlying files have been updated. You can explicitly invalidate the cache in Spark by running 'REFRESH TABLE tableName' command in SQL or by recreating the Dataset/DataFrame involved.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.readCurrentFileNotFoundError(QueryExecutionErrors.scala:781)
+	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.org$apache$spark$sql$execution$datasources$FileScanRDD$$anon$$readCurrentFile(FileScanRDD.scala:220)
+	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.nextIterator(FileScanRDD.scala:279)
+	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.hasNext(FileScanRDD.scala:129)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenEvaluatorFactory$WholeStageCodegenPartitionEvaluator$$anon$1.hasNext(WholeStageCodegenEvaluatorFactory.scala:43)
+	at org.apache.spark.sql.execution.SparkPlan.$anonfun$getByteArrayRdd$1(SparkPlan.scala:388)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:893)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2$adapted(RDD.scala:893)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+24/08/24 12:20:18 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown
+24/08/24 12:20:18 INFO MemoryStore: MemoryStore cleared
+24/08/24 12:20:18 INFO BlockManager: BlockManager stopped
+24/08/24 12:20:18 INFO ShutdownHookManager: Shutdown hook called
+24/08/24 12:20:18 ERROR CoarseGrainedExecutorBackend: RECEIVED SI

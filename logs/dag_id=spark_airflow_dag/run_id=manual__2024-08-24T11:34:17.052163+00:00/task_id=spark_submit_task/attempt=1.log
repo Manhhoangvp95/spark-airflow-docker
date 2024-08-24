@@ -1,0 +1,307 @@
+[2024-08-24T11:34:18.738+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-08-24T11:34:18.752+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: spark_airflow_dag.spark_submit_task manual__2024-08-24T11:34:17.052163+00:00 [queued]>
+[2024-08-24T11:34:18.758+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: spark_airflow_dag.spark_submit_task manual__2024-08-24T11:34:17.052163+00:00 [queued]>
+[2024-08-24T11:34:18.759+0000] {taskinstance.py:2856} INFO - Starting attempt 1 of 1
+[2024-08-24T11:34:18.771+0000] {taskinstance.py:2879} INFO - Executing <Task(SparkSubmitOperator): spark_submit_task> on 2024-08-24 11:34:17.052163+00:00
+[2024-08-24T11:34:18.776+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=592) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-08-24T11:34:18.778+0000] {standard_task_runner.py:72} INFO - Started process 601 to run task
+[2024-08-24T11:34:18.778+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'spark_***_dag', 'spark_submit_task', 'manual__2024-08-24T11:34:17.052163+00:00', '--job-id', '63', '--raw', '--subdir', 'DAGS_FOLDER/spark_jobs_dag.py', '--cfg-path', '/tmp/tmp3qhs44_r']
+[2024-08-24T11:34:18.779+0000] {standard_task_runner.py:105} INFO - Job 63: Subtask spark_submit_task
+[2024-08-24T11:34:18.790+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-08-24T11:34:18.818+0000] {task_command.py:467} INFO - Running <TaskInstance: spark_airflow_dag.spark_submit_task manual__2024-08-24T11:34:17.052163+00:00 [running]> on host 62929844d775
+[2024-08-24T11:34:18.895+0000] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='spark_***_dag' AIRFLOW_CTX_TASK_ID='spark_submit_task' AIRFLOW_CTX_EXECUTION_DATE='2024-08-24T11:34:17.052163+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-08-24T11:34:17.052163+00:00'
+[2024-08-24T11:34:18.896+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-08-24T11:34:18.896+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-08-24T11:34:18.896+0000] {logging_mixin.py:190} INFO - Current task name:spark_submit_task state:running start_date:2024-08-24 11:34:18.752481+00:00
+[2024-08-24T11:34:18.896+0000] {logging_mixin.py:190} INFO - Dag name:spark_***_dag and current dag run status:running
+[2024-08-24T11:34:18.897+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-08-24T11:34:18.906+0000] {base.py:84} INFO - Retrieving connection 'spark_local'
+[2024-08-24T11:34:18.908+0000] {spark_submit.py:403} INFO - Spark-Submit cmd: spark-submit --master spark://948a8931928d:7077 --name arrow-spark --queue root.default --deploy-mode client /opt/***/dags/spark_etl_script_docker.py
+[2024-08-24T11:34:22.202+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:22 INFO SparkContext: Running Spark version 3.5.2
+[2024-08-24T11:34:22.204+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:22 INFO SparkContext: OS info Linux, 5.15.153.1-microsoft-standard-WSL2, amd64
+[2024-08-24T11:34:22.204+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:22 INFO SparkContext: Java version 17.0.12
+[2024-08-24T11:34:22.255+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:22 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-08-24T11:34:22.326+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:22 INFO ResourceUtils: ==============================================================
+[2024-08-24T11:34:22.326+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:22 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2024-08-24T11:34:22.326+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:22 INFO ResourceUtils: ==============================================================
+[2024-08-24T11:34:22.327+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:22 INFO SparkContext: Submitted application: DataExtraction
+[2024-08-24T11:34:22.344+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:22 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2024-08-24T11:34:22.352+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:22 INFO ResourceProfile: Limiting resource is cpu
+[2024-08-24T11:34:22.353+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:22 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2024-08-24T11:34:22.398+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:22 INFO SecurityManager: Changing view acls to: default
+[2024-08-24T11:34:22.399+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:22 INFO SecurityManager: Changing modify acls to: default
+[2024-08-24T11:34:22.399+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:22 INFO SecurityManager: Changing view acls groups to:
+[2024-08-24T11:34:22.400+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:22 INFO SecurityManager: Changing modify acls groups to:
+[2024-08-24T11:34:22.401+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:22 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: default; groups with view permissions: EMPTY; users with modify permissions: default; groups with modify permissions: EMPTY
+[2024-08-24T11:34:22.607+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:22 INFO Utils: Successfully started service 'sparkDriver' on port 36639.
+[2024-08-24T11:34:22.632+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:22 INFO SparkEnv: Registering MapOutputTracker
+[2024-08-24T11:34:22.663+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:22 INFO SparkEnv: Registering BlockManagerMaster
+[2024-08-24T11:34:22.682+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:22 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2024-08-24T11:34:22.682+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:22 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2024-08-24T11:34:22.687+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:22 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2024-08-24T11:34:22.705+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:22 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-1f91748c-23c6-4d14-829b-c902c9594907
+[2024-08-24T11:34:22.717+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:22 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2024-08-24T11:34:22.730+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:22 INFO SparkEnv: Registering OutputCommitCoordinator
+[2024-08-24T11:34:22.823+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:22 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2024-08-24T11:34:22.874+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:22 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2024-08-24T11:34:22.975+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:22 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://948a8931928d:7077...
+[2024-08-24T11:34:23.014+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:23 INFO TransportClientFactory: Successfully created connection to 948a8931928d/172.19.0.4:7077 after 20 ms (0 ms spent in bootstraps)
+[2024-08-24T11:34:23.199+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:23 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20240824113423-0000
+[2024-08-24T11:34:23.208+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:23 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 42115.
+[2024-08-24T11:34:23.208+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:23 INFO NettyBlockTransferService: Server created on 62929844d775:42115
+[2024-08-24T11:34:23.210+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:23 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2024-08-24T11:34:23.216+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:23 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 62929844d775, 42115, None)
+[2024-08-24T11:34:23.218+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:23 INFO BlockManagerMasterEndpoint: Registering block manager 62929844d775:42115 with 434.4 MiB RAM, BlockManagerId(driver, 62929844d775, 42115, None)
+[2024-08-24T11:34:23.220+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:23 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 62929844d775, 42115, None)
+[2024-08-24T11:34:23.221+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:23 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 62929844d775, 42115, None)
+[2024-08-24T11:34:23.382+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:23 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2024-08-24T11:34:24.523+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:24 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2024-08-24T11:34:24.529+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:24 INFO SharedState: Warehouse path is 'file:/opt/***/spark-warehouse'.
+[2024-08-24T11:34:27.153+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:27 INFO CodeGenerator: Code generated in 169.569239 ms
+[2024-08-24T11:34:27.221+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:27 INFO SparkContext: Starting job: json at NativeMethodAccessorImpl.java:0
+[2024-08-24T11:34:27.237+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:27 INFO DAGScheduler: Got job 0 (json at NativeMethodAccessorImpl.java:0) with 2 output partitions
+[2024-08-24T11:34:27.237+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:27 INFO DAGScheduler: Final stage: ResultStage 0 (json at NativeMethodAccessorImpl.java:0)
+[2024-08-24T11:34:27.238+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:27 INFO DAGScheduler: Parents of final stage: List()
+[2024-08-24T11:34:27.239+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:27 INFO DAGScheduler: Missing parents: List()
+[2024-08-24T11:34:27.243+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:27 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[6] at json at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2024-08-24T11:34:27.319+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:27 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 20.5 KiB, free 434.4 MiB)
+[2024-08-24T11:34:27.343+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:27 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 10.0 KiB, free 434.4 MiB)
+[2024-08-24T11:34:27.345+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:27 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 62929844d775:42115 (size: 10.0 KiB, free: 434.4 MiB)
+[2024-08-24T11:34:27.348+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:27 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1585
+[2024-08-24T11:34:27.361+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:27 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 0 (MapPartitionsRDD[6] at json at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1))
+[2024-08-24T11:34:27.362+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:27 INFO TaskSchedulerImpl: Adding task set 0.0 with 2 tasks resource profile 0
+[2024-08-24T11:34:42.377+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:42 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2024-08-24T11:34:54.035+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:54 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20240824113423-0000/0 on worker-20240824113205-172.19.0.2-45279 (172.19.0.2:45279) with 1 core(s)
+[2024-08-24T11:34:54.037+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:54 INFO StandaloneSchedulerBackend: Granted executor ID app-20240824113423-0000/0 on hostPort 172.19.0.2:45279 with 1 core(s), 1024.0 MiB RAM
+[2024-08-24T11:34:54.175+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:54 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20240824113423-0000/0 is now RUNNING
+[2024-08-24T11:34:55.944+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:55 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.19.0.2:41308) with ID 0,  ResourceProfileId 0
+[2024-08-24T11:34:55.999+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:55 INFO BlockManagerMasterEndpoint: Registering block manager 172.19.0.2:42635 with 434.4 MiB RAM, BlockManagerId(0, 172.19.0.2, 42635, None)
+[2024-08-24T11:34:56.051+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:56 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (172.19.0.2, executor 0, partition 0, PROCESS_LOCAL, 8983 bytes)
+[2024-08-24T11:34:56.242+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:56 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 172.19.0.2:42635 (size: 10.0 KiB, free: 434.4 MiB)
+[2024-08-24T11:34:57.838+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:57 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1) (172.19.0.2, executor 0, partition 1, PROCESS_LOCAL, 119184 bytes)
+[2024-08-24T11:34:57.848+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:57 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 1807 ms on 172.19.0.2 (executor 0) (1/2)
+[2024-08-24T11:34:57.857+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:57 INFO PythonAccumulatorV2: Connected to AccumulatorServer at host: 127.0.0.1 port: 41051
+[2024-08-24T11:34:58.000+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 164 ms on 172.19.0.2 (executor 0) (2/2)
+[2024-08-24T11:34:58.001+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool
+[2024-08-24T11:34:58.003+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO DAGScheduler: ResultStage 0 (json at NativeMethodAccessorImpl.java:0) finished in 30.749 s
+[2024-08-24T11:34:58.005+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+[2024-08-24T11:34:58.006+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+[2024-08-24T11:34:58.008+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO DAGScheduler: Job 0 finished: json at NativeMethodAccessorImpl.java:0, took 30.786942 s
+[2024-08-24T11:34:58.151+0000] {spark_submit.py:579} INFO - root
+[2024-08-24T11:34:58.151+0000] {spark_submit.py:579} INFO - |-- data: array (nullable = true)
+[2024-08-24T11:34:58.152+0000] {spark_submit.py:579} INFO - |    |-- element: struct (containsNull = true)
+[2024-08-24T11:34:58.152+0000] {spark_submit.py:579} INFO - |    |    |-- date: string (nullable = true)
+[2024-08-24T11:34:58.152+0000] {spark_submit.py:579} INFO - |    |    |-- nav: string (nullable = true)
+[2024-08-24T11:34:58.152+0000] {spark_submit.py:579} INFO - |-- meta: struct (nullable = true)
+[2024-08-24T11:34:58.152+0000] {spark_submit.py:579} INFO - |    |-- fund_house: string (nullable = true)
+[2024-08-24T11:34:58.152+0000] {spark_submit.py:579} INFO - |    |-- scheme_category: string (nullable = true)
+[2024-08-24T11:34:58.153+0000] {spark_submit.py:579} INFO - |    |-- scheme_code: long (nullable = true)
+[2024-08-24T11:34:58.153+0000] {spark_submit.py:579} INFO - |    |-- scheme_name: string (nullable = true)
+[2024-08-24T11:34:58.153+0000] {spark_submit.py:579} INFO - |    |-- scheme_type: string (nullable = true)
+[2024-08-24T11:34:58.153+0000] {spark_submit.py:579} INFO - |-- status: string (nullable = true)
+[2024-08-24T11:34:58.153+0000] {spark_submit.py:579} INFO - 
+[2024-08-24T11:34:58.591+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO CodeGenerator: Code generated in 32.847813 ms
+[2024-08-24T11:34:58.604+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO SparkContext: Starting job: showString at NativeMethodAccessorImpl.java:0
+[2024-08-24T11:34:58.606+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO DAGScheduler: Got job 1 (showString at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2024-08-24T11:34:58.606+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO DAGScheduler: Final stage: ResultStage 1 (showString at NativeMethodAccessorImpl.java:0)
+[2024-08-24T11:34:58.606+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO DAGScheduler: Parents of final stage: List()
+[2024-08-24T11:34:58.606+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO DAGScheduler: Missing parents: List()
+[2024-08-24T11:34:58.607+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[12] at showString at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2024-08-24T11:34:58.615+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 27.1 KiB, free 434.3 MiB)
+[2024-08-24T11:34:58.628+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 11.5 KiB, free 434.3 MiB)
+[2024-08-24T11:34:58.629+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 62929844d775:42115 (size: 11.5 KiB, free: 434.4 MiB)
+[2024-08-24T11:34:58.630+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1585
+[2024-08-24T11:34:58.632+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[12] at showString at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2024-08-24T11:34:58.632+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO TaskSchedulerImpl: Adding task set 1.0 with 1 tasks resource profile 0
+[2024-08-24T11:34:58.634+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 2) (172.19.0.2, executor 0, partition 0, PROCESS_LOCAL, 8983 bytes)
+[2024-08-24T11:34:58.653+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 172.19.0.2:42635 (size: 11.5 KiB, free: 434.4 MiB)
+[2024-08-24T11:34:58.875+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 2) in 241 ms on 172.19.0.2 (executor 0) (1/1)
+[2024-08-24T11:34:58.876+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool
+[2024-08-24T11:34:58.877+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO DAGScheduler: ResultStage 1 (showString at NativeMethodAccessorImpl.java:0) finished in 0.268 s
+[2024-08-24T11:34:58.878+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO DAGScheduler: Job 1 is finished. Cancelling potential speculative or zombie tasks for this job
+[2024-08-24T11:34:58.878+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO TaskSchedulerImpl: Killing all running tasks in stage 1: Stage finished
+[2024-08-24T11:34:58.878+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO DAGScheduler: Job 1 finished: showString at NativeMethodAccessorImpl.java:0, took 0.273852 s
+[2024-08-24T11:34:58.890+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO SparkContext: Starting job: showString at NativeMethodAccessorImpl.java:0
+[2024-08-24T11:34:58.892+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO DAGScheduler: Got job 2 (showString at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2024-08-24T11:34:58.892+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO DAGScheduler: Final stage: ResultStage 2 (showString at NativeMethodAccessorImpl.java:0)
+[2024-08-24T11:34:58.892+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO DAGScheduler: Parents of final stage: List()
+[2024-08-24T11:34:58.892+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO DAGScheduler: Missing parents: List()
+[2024-08-24T11:34:58.893+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[12] at showString at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2024-08-24T11:34:58.897+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 27.1 KiB, free 434.3 MiB)
+[2024-08-24T11:34:58.898+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 11.5 KiB, free 434.3 MiB)
+[2024-08-24T11:34:58.899+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 62929844d775:42115 (size: 11.5 KiB, free: 434.4 MiB)
+[2024-08-24T11:34:58.900+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1585
+[2024-08-24T11:34:58.901+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 2 (MapPartitionsRDD[12] at showString at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(1))
+[2024-08-24T11:34:58.901+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO TaskSchedulerImpl: Adding task set 2.0 with 1 tasks resource profile 0
+[2024-08-24T11:34:58.903+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 3) (172.19.0.2, executor 0, partition 1, PROCESS_LOCAL, 119184 bytes)
+[2024-08-24T11:34:58.923+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:58 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 172.19.0.2:42635 (size: 11.5 KiB, free: 434.4 MiB)
+[2024-08-24T11:34:59.127+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:59 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 3) in 224 ms on 172.19.0.2 (executor 0) (1/1)
+[2024-08-24T11:34:59.127+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:59 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool
+[2024-08-24T11:34:59.129+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:59 INFO DAGScheduler: ResultStage 2 (showString at NativeMethodAccessorImpl.java:0) finished in 0.234 s
+[2024-08-24T11:34:59.129+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:59 INFO DAGScheduler: Job 2 is finished. Cancelling potential speculative or zombie tasks for this job
+[2024-08-24T11:34:59.129+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:59 INFO TaskSchedulerImpl: Killing all running tasks in stage 2: Stage finished
+[2024-08-24T11:34:59.130+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:59 INFO DAGScheduler: Job 2 finished: showString at NativeMethodAccessorImpl.java:0, took 0.238817 s
+[2024-08-24T11:34:59.161+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:59 INFO CodeGenerator: Code generated in 16.982753 ms
+[2024-08-24T11:34:59.202+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:59 INFO BlockManagerInfo: Removed broadcast_1_piece0 on 62929844d775:42115 in memory (size: 11.5 KiB, free: 434.4 MiB)
+[2024-08-24T11:34:59.211+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:59 INFO BlockManagerInfo: Removed broadcast_1_piece0 on 172.19.0.2:42635 in memory (size: 11.5 KiB, free: 434.4 MiB)
+[2024-08-24T11:34:59.224+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:59 INFO BlockManagerInfo: Removed broadcast_2_piece0 on 62929844d775:42115 in memory (size: 11.5 KiB, free: 434.4 MiB)
+[2024-08-24T11:34:59.231+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:59 INFO BlockManagerInfo: Removed broadcast_2_piece0 on 172.19.0.2:42635 in memory (size: 11.5 KiB, free: 434.4 MiB)
+[2024-08-24T11:34:59.238+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:59 INFO BlockManagerInfo: Removed broadcast_0_piece0 on 62929844d775:42115 in memory (size: 10.0 KiB, free: 434.4 MiB)
+[2024-08-24T11:34:59.239+0000] {spark_submit.py:579} INFO - +----------+--------+------------------------------+---------------------------+-----------+------------------------------------------------------------------------+------------------+
+[2024-08-24T11:34:59.239+0000] {spark_submit.py:579} INFO - |date      |nav     |fund_house                    |scheme_category            |scheme_code|scheme_name                                                             |scheme_type       |
+[2024-08-24T11:34:59.240+0000] {spark_submit.py:579} INFO - +----------+--------+------------------------------+---------------------------+-----------+------------------------------------------------------------------------+------------------+
+[2024-08-24T11:34:59.240+0000] {spark_submit.py:579} INFO - |23-08-2024|76.70840|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.240+0000] {spark_submit.py:579} INFO - |22-08-2024|75.99070|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.241+0000] {spark_submit.py:579} INFO - |21-08-2024|77.00220|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.241+0000] {spark_submit.py:579} INFO - |20-08-2024|76.16950|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.241+0000] {spark_submit.py:579} INFO - |19-08-2024|76.44060|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.241+0000] {spark_submit.py:579} INFO - |16-08-2024|75.75780|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.242+0000] {spark_submit.py:579} INFO - |14-08-2024|74.28050|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.242+0000] {spark_submit.py:579} INFO - |13-08-2024|73.96270|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.242+0000] {spark_submit.py:579} INFO - |12-08-2024|72.48780|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.242+0000] {spark_submit.py:579} INFO - |09-08-2024|72.23830|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.243+0000] {spark_submit.py:579} INFO - |08-08-2024|71.90250|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.243+0000] {spark_submit.py:579} INFO - |07-08-2024|69.95300|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.243+0000] {spark_submit.py:579} INFO - |06-08-2024|70.49870|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.243+0000] {spark_submit.py:579} INFO - |05-08-2024|69.14240|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.244+0000] {spark_submit.py:579} INFO - |02-08-2024|71.23940|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.244+0000] {spark_submit.py:579} INFO - |01-08-2024|72.78110|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.244+0000] {spark_submit.py:579} INFO - |31-07-2024|73.94900|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.244+0000] {spark_submit.py:579} INFO - |30-07-2024|72.28260|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.245+0000] {spark_submit.py:579} INFO - |29-07-2024|72.92240|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.245+0000] {spark_submit.py:579} INFO - |26-07-2024|72.97390|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.245+0000] {spark_submit.py:579} INFO - |25-07-2024|72.31950|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.245+0000] {spark_submit.py:579} INFO - |24-07-2024|72.68530|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.246+0000] {spark_submit.py:579} INFO - |23-07-2024|75.12460|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.246+0000] {spark_submit.py:579} INFO - |22-07-2024|75.01750|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.246+0000] {spark_submit.py:579} INFO - |19-07-2024|73.90840|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.247+0000] {spark_submit.py:579} INFO - |18-07-2024|74.23660|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.247+0000] {spark_submit.py:579} INFO - |16-07-2024|76.94730|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.247+0000] {spark_submit.py:579} INFO - |15-07-2024|76.55890|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.247+0000] {spark_submit.py:579} INFO - |12-07-2024|76.46200|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.248+0000] {spark_submit.py:579} INFO - |11-07-2024|76.05620|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.248+0000] {spark_submit.py:579} INFO - |10-07-2024|76.94290|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.248+0000] {spark_submit.py:579} INFO - |09-07-2024|76.51780|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.248+0000] {spark_submit.py:579} INFO - |08-07-2024|76.82940|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.248+0000] {spark_submit.py:579} INFO - |05-07-2024|77.12800|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.249+0000] {spark_submit.py:579} INFO - |03-07-2024|76.41810|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.249+0000] {spark_submit.py:579} INFO - |02-07-2024|75.96680|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.249+0000] {spark_submit.py:579} INFO - |01-07-2024|75.57640|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.249+0000] {spark_submit.py:579} INFO - |28-06-2024|75.45260|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.250+0000] {spark_submit.py:579} INFO - |27-06-2024|75.91750|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.250+0000] {spark_submit.py:579} INFO - |26-06-2024|75.72040|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.250+0000] {spark_submit.py:579} INFO - |25-06-2024|75.36120|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.251+0000] {spark_submit.py:579} INFO - |24-06-2024|74.46260|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.251+0000] {spark_submit.py:579} INFO - |21-06-2024|75.31550|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.251+0000] {spark_submit.py:579} INFO - |20-06-2024|75.37370|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.251+0000] {spark_submit.py:579} INFO - |18-06-2024|75.84130|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.252+0000] {spark_submit.py:579} INFO - |14-06-2024|75.11110|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.252+0000] {spark_submit.py:579} INFO - |13-06-2024|74.93690|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.252+0000] {spark_submit.py:579} INFO - |12-06-2024|75.03020|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.252+0000] {spark_submit.py:579} INFO - |11-06-2024|73.95610|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.253+0000] {spark_submit.py:579} INFO - |10-06-2024|73.67620|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.253+0000] {spark_submit.py:579} INFO - |07-06-2024|73.06590|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.253+0000] {spark_submit.py:579} INFO - |06-06-2024|73.20120|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.253+0000] {spark_submit.py:579} INFO - |05-06-2024|73.20280|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.254+0000] {spark_submit.py:579} INFO - |04-06-2024|71.72000|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.254+0000] {spark_submit.py:579} INFO - |03-06-2024|71.20370|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.254+0000] {spark_submit.py:579} INFO - |31-05-2024|71.19110|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.254+0000] {spark_submit.py:579} INFO - |30-05-2024|71.13970|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.255+0000] {spark_submit.py:579} INFO - |29-05-2024|72.57120|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.255+0000] {spark_submit.py:579} INFO - |28-05-2024|72.82460|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.255+0000] {spark_submit.py:579} INFO - |24-05-2024|72.54910|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.255+0000] {spark_submit.py:579} INFO - |23-05-2024|72.28580|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.256+0000] {spark_submit.py:579} INFO - |22-05-2024|72.36630|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.256+0000] {spark_submit.py:579} INFO - |21-05-2024|72.40350|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.256+0000] {spark_submit.py:579} INFO - |17-05-2024|72.23020|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.256+0000] {spark_submit.py:579} INFO - |16-05-2024|72.30540|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.257+0000] {spark_submit.py:579} INFO - |15-05-2024|72.63450|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.257+0000] {spark_submit.py:579} INFO - |14-05-2024|71.42160|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.257+0000] {spark_submit.py:579} INFO - |13-05-2024|71.00290|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.257+0000] {spark_submit.py:579} INFO - |10-05-2024|71.13730|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.258+0000] {spark_submit.py:579} INFO - |09-05-2024|71.21880|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.258+0000] {spark_submit.py:579} INFO - |08-05-2024|70.99040|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.258+0000] {spark_submit.py:579} INFO - |07-05-2024|71.15260|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.258+0000] {spark_submit.py:579} INFO - |06-05-2024|71.28340|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.259+0000] {spark_submit.py:579} INFO - |03-05-2024|70.03690|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.259+0000] {spark_submit.py:579} INFO - |02-05-2024|69.15220|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.259+0000] {spark_submit.py:579} INFO - |30-04-2024|68.29790|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.259+0000] {spark_submit.py:579} INFO - |29-04-2024|69.47510|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.259+0000] {spark_submit.py:579} INFO - |26-04-2024|69.44340|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.260+0000] {spark_submit.py:579} INFO - |25-04-2024|68.35460|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.260+0000] {spark_submit.py:579} INFO - |24-04-2024|68.67340|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.260+0000] {spark_submit.py:579} INFO - |23-04-2024|68.82100|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.260+0000] {spark_submit.py:579} INFO - |22-04-2024|67.63990|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.260+0000] {spark_submit.py:579} INFO - |19-04-2024|67.06010|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.261+0000] {spark_submit.py:579} INFO - |18-04-2024|68.68500|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.261+0000] {spark_submit.py:579} INFO - |16-04-2024|69.84850|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.261+0000] {spark_submit.py:579} INFO - |15-04-2024|69.46820|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.261+0000] {spark_submit.py:579} INFO - |12-04-2024|70.68060|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.261+0000] {spark_submit.py:579} INFO - |10-04-2024|70.87020|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.261+0000] {spark_submit.py:579} INFO - |09-04-2024|71.42640|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.262+0000] {spark_submit.py:579} INFO - |08-04-2024|71.58850|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.262+0000] {spark_submit.py:579} INFO - |05-04-2024|71.55150|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.262+0000] {spark_submit.py:579} INFO - |04-04-2024|70.43260|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.262+0000] {spark_submit.py:579} INFO - |03-04-2024|71.38500|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.262+0000] {spark_submit.py:579} INFO - |02-04-2024|71.16070|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.262+0000] {spark_submit.py:579} INFO - |01-04-2024|71.84190|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.263+0000] {spark_submit.py:579} INFO - |31-03-2024|71.96850|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.263+0000] {spark_submit.py:579} INFO - |28-03-2024|72.01060|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.263+0000] {spark_submit.py:579} INFO - |27-03-2024|72.04090|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.263+0000] {spark_submit.py:579} INFO - |26-03-2024|72.05560|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.263+0000] {spark_submit.py:579} INFO - |22-03-2024|72.59400|Franklin Templeton Mutual Fund|Other Scheme - FoF Overseas|118550     |Franklin India Feeder - Franklin U S Opportunities Fund - Direct - IDCW |Open Ended Schemes|
+[2024-08-24T11:34:59.263+0000] {spark_submit.py:579} INFO - +----------+--------+------------------------------+---------------------------+-----------+------------------------------------------------------------------------+------------------+
+[2024-08-24T11:34:59.264+0000] {spark_submit.py:579} INFO - only showing top 100 rows
+[2024-08-24T11:34:59.264+0000] {spark_submit.py:579} INFO - 
+[2024-08-24T11:34:59.264+0000] {spark_submit.py:579} INFO - 24/08/24 11:34:59 INFO BlockManagerInfo: Removed broadcast_0_piece0 on 172.19.0.2:42635 in memory (size: 10.0 KiB, free: 434.4 MiB)
+[2024-08-24T11:35:00.003+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO CodeGenerator: Code generated in 29.003526 ms
+[2024-08-24T11:35:00.018+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO SparkContext: Starting job: toPandas at /opt/***/dags/spark_etl_script_docker.py:36
+[2024-08-24T11:35:00.020+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO DAGScheduler: Got job 3 (toPandas at /opt/***/dags/spark_etl_script_docker.py:36) with 2 output partitions
+[2024-08-24T11:35:00.020+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO DAGScheduler: Final stage: ResultStage 3 (toPandas at /opt/***/dags/spark_etl_script_docker.py:36)
+[2024-08-24T11:35:00.021+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO DAGScheduler: Parents of final stage: List()
+[2024-08-24T11:35:00.021+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO DAGScheduler: Missing parents: List()
+[2024-08-24T11:35:00.021+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO DAGScheduler: Submitting ResultStage 3 (MapPartitionsRDD[14] at toPandas at /opt/***/dags/spark_etl_script_docker.py:36), which has no missing parents
+[2024-08-24T11:35:00.025+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 26.6 KiB, free 434.4 MiB)
+[2024-08-24T11:35:00.027+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 11.3 KiB, free 434.4 MiB)
+[2024-08-24T11:35:00.027+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 62929844d775:42115 (size: 11.3 KiB, free: 434.4 MiB)
+[2024-08-24T11:35:00.028+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1585
+[2024-08-24T11:35:00.029+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 3 (MapPartitionsRDD[14] at toPandas at /opt/***/dags/spark_etl_script_docker.py:36) (first 15 tasks are for partitions Vector(0, 1))
+[2024-08-24T11:35:00.029+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO TaskSchedulerImpl: Adding task set 3.0 with 2 tasks resource profile 0
+[2024-08-24T11:35:00.031+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 4) (172.19.0.2, executor 0, partition 0, PROCESS_LOCAL, 8983 bytes)
+[2024-08-24T11:35:00.047+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 172.19.0.2:42635 (size: 11.3 KiB, free: 434.4 MiB)
+[2024-08-24T11:35:00.186+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO TaskSetManager: Starting task 1.0 in stage 3.0 (TID 5) (172.19.0.2, executor 0, partition 1, PROCESS_LOCAL, 119184 bytes)
+[2024-08-24T11:35:00.187+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 4) in 157 ms on 172.19.0.2 (executor 0) (1/2)
+[2024-08-24T11:35:00.320+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO TaskSetManager: Finished task 1.0 in stage 3.0 (TID 5) in 134 ms on 172.19.0.2 (executor 0) (2/2)
+[2024-08-24T11:35:00.320+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool
+[2024-08-24T11:35:00.321+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO DAGScheduler: ResultStage 3 (toPandas at /opt/***/dags/spark_etl_script_docker.py:36) finished in 0.298 s
+[2024-08-24T11:35:00.321+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO DAGScheduler: Job 3 is finished. Cancelling potential speculative or zombie tasks for this job
+[2024-08-24T11:35:00.322+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO TaskSchedulerImpl: Killing all running tasks in stage 3: Stage finished
+[2024-08-24T11:35:00.322+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO DAGScheduler: Job 3 finished: toPandas at /opt/***/dags/spark_etl_script_docker.py:36, took 0.302857 s
+[2024-08-24T11:35:00.565+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO SparkContext: Invoking stop() from shutdown hook
+[2024-08-24T11:35:00.565+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO SparkContext: SparkContext is stopping with exitCode 0.
+[2024-08-24T11:35:00.573+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO SparkUI: Stopped Spark web UI at http://62929844d775:4040
+[2024-08-24T11:35:00.576+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO StandaloneSchedulerBackend: Shutting down all executors
+[2024-08-24T11:35:00.576+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Asking each executor to shut down
+[2024-08-24T11:35:00.591+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2024-08-24T11:35:00.608+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO MemoryStore: MemoryStore cleared
+[2024-08-24T11:35:00.608+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO BlockManager: BlockManager stopped
+[2024-08-24T11:35:00.613+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2024-08-24T11:35:00.615+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2024-08-24T11:35:00.626+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO SparkContext: Successfully stopped SparkContext
+[2024-08-24T11:35:00.626+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO ShutdownHookManager: Shutdown hook called
+[2024-08-24T11:35:00.627+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO ShutdownHookManager: Deleting directory /tmp/spark-34465374-170c-4685-9813-85cdc2185b5f
+[2024-08-24T11:35:00.630+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO ShutdownHookManager: Deleting directory /tmp/spark-60352dfc-18e4-41c7-ab40-6107af886b09
+[2024-08-24T11:35:00.634+0000] {spark_submit.py:579} INFO - 24/08/24 11:35:00 INFO ShutdownHookManager: Deleting directory /tmp/spark-34465374-170c-4685-9813-85cdc2185b5f/pyspark-73b125ae-154d-4bac-9e58-a519520f6219
+[2024-08-24T11:35:00.676+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-08-24T11:35:00.677+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=spark_***_dag, task_id=spark_submit_task, run_id=manual__2024-08-24T11:34:17.052163+00:00, execution_date=20240824T113417, start_date=20240824T113418, end_date=20240824T113500
+[2024-08-24T11:35:00.692+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-08-24T11:35:00.692+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-08-24T11:35:00.692+0000] {logging_mixin.py:190} INFO - Dag name:spark_***_dag queued_at:2024-08-24 11:34:17.066201+00:00
+[2024-08-24T11:35:00.692+0000] {logging_mixin.py:190} INFO - Task hostname:62929844d775 operator:SparkSubmitOperator
+[2024-08-24T11:35:00.723+0000] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2024-08-24T11:35:00.735+0000] {taskinstance.py:3891} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-08-24T11:35:00.739+0000] {local_task_job_runner.py:240} INFO - ::endgroup::

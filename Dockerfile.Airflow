@@ -1,0 +1,21 @@
+FROM apache/airflow:2.10.0-python3.12
+
+COPY ./requirements.txt /
+RUN pip install -r /requirements.txt
+
+USER root
+
+# Install OpenJDK-11
+RUN apt update && \
+    apt-get install -y ca-certificates-java && \
+    apt-get install -y default-jdk && \
+    apt-get install -y ant && \
+    apt-get clean;
+
+# Set JAVA_HOME
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64/
+RUN export JAVA_HOME
+
+USER airflow
+
+COPY --chown=airflow:root ./dags /opt/airflow/dags
